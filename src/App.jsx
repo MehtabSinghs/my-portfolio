@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter , useLocation } from "react-router-dom";
 import "./style.css";
 import Home from "./Home";
 import CaseStudiesPage from "./CaseStudy";
@@ -10,6 +10,17 @@ const LoadingScreen = () => (
     <p>Loading Portfolio...</p>
   </div>
 );
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,12 +35,13 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
