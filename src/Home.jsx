@@ -146,8 +146,8 @@ const Hero = () => {
           <span>Prototyping</span>
         </div>
         <div className="hero__cta animate-fade-in-up">
-          <a href="#work" className="button-glow">View Case Studies</a>
-          <a href="#contact" className="hero__cta--ghost">
+          <a href="#/case-studies" className="button-glow">View Case Studies</a>
+          <a href="contact" className="hero__cta--ghost">
             Let's Work Together
           </a>
         </div>

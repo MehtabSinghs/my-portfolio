@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter , useLocation } from "react-router-dom";
+import { HashRouter ,Routes,Route, useLocation } from "react-router-dom";
 import "./style.css";
 import Home from "./Home";
 import CaseStudiesPage from "./CaseStudy";
+import CaseStudyDetail from "./CaseStudyDetail";
 
 const LoadingScreen = () => (
   <div className="loader">
@@ -40,6 +41,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
       </Routes>
     </HashRouter>
   );
