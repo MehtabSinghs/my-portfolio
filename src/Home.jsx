@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Nav = ({ onCaseStudies }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -559,14 +560,16 @@ const ScrollToTop = () => {
   );
 };
 
-const Home = ({ onCaseStudies }) => {
+const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="page">
       <div className="page__gradient" />
-      <Nav onCaseStudies={onCaseStudies} />
+      <Nav onCaseStudies={() => navigate("/case-studies")} />
       <main>
         <Hero />
-        <Work onCaseStudies={onCaseStudies} />
+        <Work onCaseStudies={() => navigate("/case-studies")} />
         <Process />
         <Skills />
         <Testimonials />

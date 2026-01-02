@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const CaseStudyNav = ({ onBack }) => (
@@ -74,7 +75,8 @@ const CaseStudyDetail = ({ project, onBack }) => (
   </div>
 );
 
-const CaseStudiesPage = ({ onBack }) => {
+const CaseStudiesPage = () => {
+  const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
@@ -133,7 +135,7 @@ const CaseStudiesPage = ({ onBack }) => {
   return (
     <div className="page">
       <div className="page__gradient" />
-      <CaseStudyNav onBack={onBack} />
+      <CaseStudyNav onBack={() => navigate("/")} />
       <main className="case-studies">
         <section className="case-studies__header">
           <p className="case-studies__subtitle">Deep Dives</p>

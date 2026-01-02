@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./style.css";
 import Home from "./Home";
 import CaseStudiesPage from "./CaseStudy";
 
+const LoadingScreen = () => (
+  <div className="loader">
+    <div className="loader__spinner"></div>
+    <p>Loading Portfolio...</p>
+  </div>
+);
+
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
     // Simulate loading
@@ -13,20 +20,17 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="loader">
-        <div className="loader__spinner"></div>
-        <p>Loading Portfolio...</p>
-      </div>
-    );
+    return <LoadingScreen />;
   }
 
-  if (currentPage === "caseStudies") {
-    window.scrollTo({ top: 0, behavior: "instant" });
-    return <CaseStudiesPage onBack={() => setCurrentPage("home")} />;
-  }
-
-  return <Home onCaseStudies={() => setCurrentPage("caseStudies")} />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
