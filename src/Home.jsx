@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { projects } from "./projectsData";
 
 const Nav = ({ onCaseStudies }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -227,50 +228,6 @@ const ProjectCard = ({ tag, title, summary, metrics, role, link, onCaseStudyClic
 };
 
 const Work = ({ onCaseStudies }) => {
-  const projects = [
-    {
-      tag: "LIVE WEBSITE · E-COMMERCE",
-      title: "Punjab Pagri House",
-      summary:
-        "Complete website design and development for Punjab Pagri House - a traditional Punjabi headwear store. Created a modern e-commerce experience that honors cultural heritage while providing seamless online shopping.",
-      metrics: [
-        "Full-stack website from concept to launch",
-        "Responsive design for mobile & desktop",
-        "Cultural authenticity meets modern UX",
-        "Product catalog with shopping experience",
-      ],
-      role: "UX · UI · Web Design · Figma",
-      link: "",
-    },
-    {
-      tag: "CASE STUDY · ED-TECH",
-      title: "Apricus Academy",
-      summary:
-        "Designed a comprehensive online learning platform for students to discover, learn, and organize their educational journey. Created intuitive interfaces for course management, progress tracking, and interactive learning experiences.",
-      metrics: [
-        "Complete frontend design system in Figma",
-        "Student-centered learning experience",
-        "Intuitive course organization & navigation",
-        "Interactive learning modules & progress tracking",
-      ],
-      role: "UX · UI · Frontend Design · Figma",
-      link: "",
-    },
-    {
-      tag: "CASE STUDY · WEB",
-      title: "B2B Analytics Dashboard",
-      summary:
-        "Simplified a dense analytics product into a flexible workspace with clear hierarchy and information grouping.",
-      metrics: [
-        "↑ Feature discoverability",
-        "Fewer support tickets on reporting",
-        "New layout supports future modules",
-      ],
-      role: "IA · Interaction Design · Figma",
-      link: "",
-    },
-  ];
-
   return (
     <section id="work" className="work">
       <div className="section-heading">
@@ -282,9 +239,9 @@ const Work = ({ onCaseStudies }) => {
         </p>
       </div>
       <div className="work__grid">
-        {projects.map((p, i) => (
+        {projects.map((p) => (
           <ProjectCard 
-            key={i} 
+            key={p.id} 
             {...p} 
             onCaseStudyClick={() => {
               onCaseStudies();

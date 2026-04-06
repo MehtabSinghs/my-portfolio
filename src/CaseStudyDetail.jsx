@@ -47,6 +47,27 @@ const CaseStudyDetail = () => {
           <p>{project.summary}</p>
         </section>
 
+        {project.challenge && (
+          <section className="case-study__section">
+            <h2>Challenge</h2>
+            <p>{project.challenge}</p>
+          </section>
+        )}
+
+        {project.approach && (
+          <section className="case-study__section">
+            <h2>Approach</h2>
+            <p>{project.approach}</p>
+          </section>
+        )}
+
+        {project.outcome && (
+          <section className="case-study__section">
+            <h2>Outcome</h2>
+            <p>{project.outcome}</p>
+          </section>
+        )}
+
         <section className="case-study__section">
           <h2>Role & Responsibilities</h2>
           <p>{project.role}</p>
@@ -73,10 +94,9 @@ const CaseStudyDetail = () => {
         <section className="case-study__section">
           <h2>Tools Used</h2>
           <div className="case-study__tools">
-            <span>Figma</span>
-            <span>User Research</span>
-            <span>Prototyping</span>
-            <span>Interaction Design</span>
+            {(project.tools || ["Figma", "User Research", "Prototyping", "Interaction Design"]).map((tool, i) => (
+              <span key={i}>{tool}</span>
+            ))}
           </div>
         </section>
 
@@ -87,7 +107,10 @@ const CaseStudyDetail = () => {
               View Figma File
             </a>
           ) : (
-            <p className="case-study__coming">Full Figma file available on request</p>
+            <p className="case-study__coming">
+              Full case study and Figma walkthrough available on request. {' '}
+              <a href="mailto:mehtabsingh723@gmail.com">Contact me</a> to see the rest.
+            </p>
           )}
         </section>
       </main>
