@@ -71,27 +71,39 @@ export const projects = [
     ]
   },
   {
-    id: "b2b-analytics-dashboard",
-    tag: "CASE STUDY · WEB",
-    title: "B2B Analytics Dashboard",
+    id: "clearledger-finance",
+    tag: "CASE STUDY · FINTECH MOBILE APP",
+    title: "ClearLedger Finance",
     summary:
-      "Simplified a dense analytics product into a flexible workspace with clear hierarchy and information grouping. Redesigned the entire interface to reduce cognitive load while maintaining power-user features.",
+      "Designed a mobile finance app that helps users manage money with key insights in a simpler, calmer way than most personal finance tools. The app surfaces what matters most first, so users can understand their spending and plan ahead without cognitive overload.",
     challenge:
-      "The existing dashboard exposed too much data at once, making it hard for users to know what mattered first or how to act on insights.",
+      "Many finance apps turn simple money management into a maze of charts, tabs, and terminology that makes users avoid the app instead of using it consistently.",
     approach:
-      "Organized the interface around decision-making, with prominent KPIs, grouped secondary metrics, and clear pathways for drilling into deeper data only when needed.",
+      "Focused the interface on the essentials: balances, spending trends, upcoming bills, and savings progress, all presented with strong hierarchy and plain-language guidance.",
     outcome:
-      "A sharper analytics experience that helps teams understand performance faster and navigate large datasets with less friction.",
+      "A standout finance experience that feels clear, trustworthy, and easy to return to every day for quick decisions.",
     metrics: [
-      "↑ Feature discoverability",
-      "Fewer support tickets on reporting",
-      "New layout supports future modules",
-      "50% reduction in onboarding time",
-      "Improved data comprehension for stakeholders",
+      "Core money data surfaced at a glance",
+      "Lower cognitive load across the dashboard",
+      "Practical insights over dense charts",
+      "Better support for recurring financial habits",
+      "Simple, trustworthy mobile experience",
     ],
-    role: "IA · Interaction Design · Design System · Figma",
-    tools: ["Figma", "Information Architecture", "Data Visualization", "Interaction Design"],
+    role: "UX · UI · Fintech Design · Figma · Mobile-first product thinking",
+    tools: ["Figma", "Mobile UX", "Data Hierarchy", "Dashboard Design"],
     link: "",
+    images:[
+      {
+        src:"screenshots/f1.png",
+        alt: "ClearLedger Finance Dashboard",
+        caption: "Dashboard with key financial insights",
+      },
+      {
+        src:"screenshots/f2.png",
+        alt: "ClearLedger Finance Spending Trends",
+        caption: "Spending trends with clear hierarchy",
+      }
+    ]
   },
   {
     id: "excellence-university",
@@ -169,38 +181,26 @@ export const projects = [
     ]
   },
   {
-    id: "clearledger-finance",
-    tag: "CASE STUDY · FINTECH MOBILE APP",
-    title: "ClearLedger Finance",
+    id: "b2b-analytics-dashboard",
+    tag: "CASE STUDY · WEB",
+    title: "B2B Analytics Dashboard",
     summary:
-      "Designed a mobile finance app that helps users manage money with key insights in a simpler, calmer way than most personal finance tools. The app surfaces what matters most first, so users can understand their spending and plan ahead without cognitive overload.",
+      "Simplified a dense analytics product into a flexible workspace with clear hierarchy and information grouping. Redesigned the entire interface to reduce cognitive load while maintaining power-user features.",
     challenge:
-      "Many finance apps turn simple money management into a maze of charts, tabs, and terminology that makes users avoid the app instead of using it consistently.",
+      "The existing dashboard exposed too much data at once, making it hard for users to know what mattered first or how to act on insights.",
     approach:
-      "Focused the interface on the essentials: balances, spending trends, upcoming bills, and savings progress, all presented with strong hierarchy and plain-language guidance.",
+      "Organized the interface around decision-making, with prominent KPIs, grouped secondary metrics, and clear pathways for drilling into deeper data only when needed.",
     outcome:
-      "A standout finance experience that feels clear, trustworthy, and easy to return to every day for quick decisions.",
+      "A sharper analytics experience that helps teams understand performance faster and navigate large datasets with less friction.",
     metrics: [
-      "Core money data surfaced at a glance",
-      "Lower cognitive load across the dashboard",
-      "Practical insights over dense charts",
-      "Better support for recurring financial habits",
-      "Simple, trustworthy mobile experience",
+      "↑ Feature discoverability",
+      "Fewer support tickets on reporting",
+      "New layout supports future modules",
+      "50% reduction in onboarding time",
+      "Improved data comprehension for stakeholders",
     ],
-    role: "UX · UI · Fintech Design · Figma · Mobile-first product thinking",
-    tools: ["Figma", "Mobile UX", "Data Hierarchy", "Dashboard Design"],
+    role: "IA · Interaction Design · Design System · Figma",
+    tools: ["Figma", "Information Architecture", "Data Visualization", "Interaction Design"],
     link: "",
-    images:[
-      {
-        src:"screenshots/f1.png",
-        alt: "ClearLedger Finance Dashboard",
-        caption: "Dashboard with key financial insights",
-      },
-      {
-        src:"screenshots/f2.png",
-        alt: "ClearLedger Finance Spending Trends",
-        caption: "Spending trends with clear hierarchy",
-      }
-    ]
   },
 ];
