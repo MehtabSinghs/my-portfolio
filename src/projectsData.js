@@ -21,6 +21,23 @@ export const projects = [
     role: "UX · UI · Web Design · Figma · Complete project ownership from discovery to launch",
     tools: ["Figma", "Responsive UI", "E-commerce IA", "Prototyping"],
     link: "",
+    images:[
+      {
+        src:"screenshots/punjabpagri1.png",
+        alt: "Punjab Pagri House Homepage",
+        caption: "Homepage design"
+      },
+      {
+        src:"screenshots/punjabpagri2.png",
+        alt: "Punjab Pagri House Product Page",
+        caption: "Product detail page"
+      },
+      {
+        src:"screenshots/punjabpagri3.png",
+        alt: "Punjab Pagri House Cart",
+        caption: "Shopping cart UI"
+      }
+    ]
   },
   {
     id: "apricus-academy",
@@ -45,6 +62,13 @@ export const projects = [
     role: "UX · UI · Frontend Design · Figma · Complete design ownership",
     tools: ["Figma", "Journey Mapping", "Dashboard Design", "Prototyping"],
     link: "",
+    images: [
+      {
+        src:"screenshots/apricus1.png",
+        alt: "Apricus Academy Dashboard",
+        caption: "Homepage"
+      }
+    ]
   },
   {
     id: "b2b-analytics-dashboard",
@@ -74,11 +98,11 @@ export const projects = [
     tag: "CASE STUDY · EDUCATION PLATFORM",
     title: "Excellence University",
     summary:
-      "Designed a university website that helps students manage course discovery and academic enrollment with less cognitive load. The experience focuses on guiding users to the right classes, deadlines, and next steps without overwhelming them.",
+      "Designed a comprehensive university platform that empowers students to seamlessly manage course discovery, academic enrollment, and scheduling. The solution emphasizes clarity and guidance, ensuring users can efficiently navigate classes, deadlines, and next steps without unnecessary complexity. An advanced automation process was integrated to proactively handle schedule conflicts, providing students with intelligent recommendations and a frictionless enrollment experience.",
     challenge:
       "Students were navigating a cluttered academic flow where course details, enrollment steps, and key deadlines were scattered across too many pages.",
     approach:
-      "Built a clean academic journey with task-based navigation, simplified course cards, and a student dashboard that highlights the next action instead of burying it in dense menus.",
+      "Engineered a streamlined academic journey featuring task-based navigation, intuitive course cards, and a student dashboard that prioritizes actionable next steps. A robust automation process was implemented to detect and resolve schedule conflicts, ensuring students receive real-time guidance and alternative options. This professional approach minimizes administrative burdens and enhances the overall academic planning experience.",
     outcome:
       "A smoother enrollment experience that feels guided, easy to scan, and better suited to busy students balancing multiple decisions.",
     metrics: [
@@ -91,6 +115,23 @@ export const projects = [
     role: "UX · UI · Information Architecture · Figma · Student journey design",
     tools: ["Figma", "User Flows", "Information Architecture", "Prototype Testing"],
     link: "",
+    images: [
+      {
+        src:"screenshots/excellence1.png",
+        alt: "Excellence University Course Catalog",
+        caption: "Course catalog with simplified cards"
+      },
+      {
+        src:"screenshots/excellence2.png",
+        alt: "Excellence University Course Section",
+        caption: "Student course section"
+      },
+      {
+        src:"screenshots/excellence3.png",
+        alt: "Excellence University Enrollment Flow",
+        caption: "Enrollment flow with clear next steps"
+      }
+    ]
   },
   {
     id: "eco-care",
@@ -114,6 +155,18 @@ export const projects = [
     role: "UX · UI · Mobile App Design · Figma · Behavior-driven design",
     tools: ["Figma", "Mobile UX", "Data Tracking", "Habit Design"],
     link: "",
+    images:[
+      {
+        src:"screenshots/eco1.png",
+        alt: "Eco Care Habit Tracking",
+        caption: "Habit tracking interface"
+      },
+      {
+        src:"screenshots/eco2.png",
+        alt: "Eco Care Scan",
+        caption: "Scan feature for product impact"
+      }
+    ]
   },
   {
     id: "clearledger-finance",
@@ -137,5 +190,17 @@ export const projects = [
     role: "UX · UI · Fintech Design · Figma · Mobile-first product thinking",
     tools: ["Figma", "Mobile UX", "Data Hierarchy", "Dashboard Design"],
     link: "",
+    images:[
+      {
+        src:"screenshots/f1.png",
+        alt: "ClearLedger Finance Dashboard",
+        caption: "Dashboard with key financial insights",
+      },
+      {
+        src:"screenshots/f2.png",
+        alt: "ClearLedger Finance Spending Trends",
+        caption: "Spending trends with clear hierarchy",
+      }
+    ]
   },
 ];

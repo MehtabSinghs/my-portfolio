@@ -42,6 +42,40 @@ const CaseStudyDetail = () => {
           <p className="case-study__tag">{project.tag}</p>
         </div>
 
+        {/* Beautiful Image Section */}
+        {project.images && project.images.length > 0 && (
+          <section className="case-study__section case-study__images">
+            <h2>Project Gallery</h2>
+            <div className="image-gallery">
+              {project.images.map((img, idx) => {
+                // Ensure correct path for subdirectory deployment
+                const imgSrc = img.src.startsWith("/") ? (window.location.pathname.replace(/\/[^/]*$/, "/") + img.src.replace(/^\//, "")) : img.src;
+                const handleFigureClick = e => {
+                  // Only open if not clicking a link (avoid double open)
+                  if (!e.target.closest('a')) {
+                    window.open(imgSrc, '_blank', 'noopener');
+                  }
+                };
+                return (
+                  <figure
+                    className="image-gallery__item"
+                    key={idx}
+                    style={{ cursor: "zoom-in" }}
+                    onClick={handleFigureClick}
+                    tabIndex={0}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { handleFigureClick(e); } }}
+                  >
+                    <a href={imgSrc} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                      <img src={imgSrc} alt={img.alt || `Screenshot ${idx + 1}`} style={{ pointerEvents: "none" }} />
+                    </a>
+                    {img.caption && <figcaption>{img.caption}</figcaption>}
+                  </figure>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
         <section className="case-study__section">
           <h2>Overview</h2>
           <p>{project.summary}</p>
