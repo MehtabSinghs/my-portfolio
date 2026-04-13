@@ -21,6 +21,10 @@ export const projects = [
     role: "UX · UI · Web Design · Figma · Complete project ownership from discovery to launch",
     tools: ["Figma", "Responsive UI", "E-commerce IA", "Prototyping"],
     link: "",
+    screenshots: [
+      import.meta.env.BASE_URL + "src/assets/screenshots/punjabpagri1.png",
+      import.meta.env.BASE_URL + "src/assets/screenshots/punjabpagri2.png",
+    ],
   },
   {
     id: "apricus-academy",

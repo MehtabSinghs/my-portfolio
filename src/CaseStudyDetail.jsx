@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "./projectsData";
 import "./style.css";
@@ -15,9 +15,18 @@ const CaseStudyNav = ({ onBack }) => (
 );
 
 const CaseStudyDetail = () => {
+
   const { id } = useParams();
   const navigate = useNavigate();
   const project = projects.find(p => p.id === id);
+  const scrollRef = useRef();
+  const [enlarged, setEnlarged] = useState(null);
+
+  const scroll = dir => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: dir * 400, behavior: "smooth" });
+    }
+  };
 
   if (!project) {
     return (
@@ -61,10 +70,54 @@ const CaseStudyDetail = () => {
           </section>
         )}
 
+
         {project.outcome && (
           <section className="case-study__section">
             <h2>Outcome</h2>
             <p>{project.outcome}</p>
+          </section>
+        )}
+
+        {/* Screenshots Section */}
+        {project.screenshots && project.screenshots.length > 0 && (
+          <section className="case-study__section">
+            <h2>Screenshots</h2>
+            <div className="case-study__screenshots-wrap">
+              <button
+                className="case-study__scroll-btn left"
+                onClick={() => scroll(-1)}
+                aria-label="Scroll left"
+              >
+                &#8592;
+              </button>
+              <div className="case-study__screenshots-horizontal" ref={scrollRef}>
+                {project.screenshots.map((img, i) => (
+                  <div
+                    className="case-study__screenshot-card"
+                    key={i}
+                    onClick={() => setEnlarged(img)}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`Enlarge screenshot ${i + 1}`}
+                  >
+                    <img src={img} alt={`Screenshot ${i + 1}`} />
+                  </div>
+                ))}
+              </div>
+              <button
+                className="case-study__scroll-btn right"
+                onClick={() => scroll(1)}
+                aria-label="Scroll right"
+              >
+                &#8594;
+              </button>
+            </div>
+            {enlarged && (
+              <div className="case-study__enlarge-overlay" onClick={() => setEnlarged(null)}>
+                <img src={enlarged} alt="Enlarged screenshot" className="case-study__enlarge-img" />
+                <button className="case-study__enlarge-close" onClick={() => setEnlarged(null)} aria-label="Close">&times;</button>
+              </div>
+            )}
           </section>
         )}
 
