@@ -28,6 +28,19 @@ const CaseStudyDetail = () => {
     }
   };
 
+  const handleCardKey = (e, img) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setEnlarged(img);
+    }
+  };
+
+  const handleOverlayKey = e => {
+    if (e.key === "Escape") {
+      setEnlarged(null);
+    }
+  };
+
   if (!project) {
     return (
       <div className="page">
@@ -82,13 +95,16 @@ const CaseStudyDetail = () => {
         {project.screenshots && project.screenshots.length > 0 && (
           <section className="case-study__section">
             <h2>Screenshots</h2>
+            <p className="case-study__screenshots-label">
+              Some screenshots of this project — click any image to enlarge.
+            </p>
             <div className="case-study__screenshots-wrap">
               <button
-                className="case-study__scroll-btn left"
+                className="case-study__scroll-btn case-study__scroll-btn--left"
                 onClick={() => scroll(-1)}
                 aria-label="Scroll left"
               >
-                &#8592;
+                <span className="case-study__scroll-arrow">&#8592;</span>
               </button>
               <div className="case-study__screenshots-horizontal" ref={scrollRef}>
                 {project.screenshots.map((img, i) => (
@@ -96,6 +112,7 @@ const CaseStudyDetail = () => {
                     className="case-study__screenshot-card"
                     key={i}
                     onClick={() => setEnlarged(img)}
+                    onKeyDown={e => handleCardKey(e, img)}
                     tabIndex={0}
                     role="button"
                     aria-label={`Enlarge screenshot ${i + 1}`}
@@ -105,15 +122,23 @@ const CaseStudyDetail = () => {
                 ))}
               </div>
               <button
-                className="case-study__scroll-btn right"
+                className="case-study__scroll-btn case-study__scroll-btn--right"
                 onClick={() => scroll(1)}
                 aria-label="Scroll right"
               >
-                &#8594;
+                <span className="case-study__scroll-arrow">&#8594;</span>
               </button>
             </div>
             {enlarged && (
-              <div className="case-study__enlarge-overlay" onClick={() => setEnlarged(null)}>
+              <div
+                className="case-study__enlarge-overlay"
+                onClick={() => setEnlarged(null)}
+                onKeyDown={handleOverlayKey}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Enlarged screenshot"
+                tabIndex={-1}
+              >
                 <img src={enlarged} alt="Enlarged screenshot" className="case-study__enlarge-img" />
                 <button className="case-study__enlarge-close" onClick={() => setEnlarged(null)} aria-label="Close">&times;</button>
               </div>
