@@ -25,18 +25,9 @@ export const projects = [
       {
         src:"screenshots/punjabpagri1.png",
         alt: "Punjab Pagri House Homepage",
-        caption: "Homepage design"
+        // caption: "Homepage design"
       },
-      {
-        src:"screenshots/punjabpagri2.png",
-        alt: "Punjab Pagri House Product Page",
-        caption: "Product detail page"
-      },
-      {
-        src:"screenshots/punjabpagri3.png",
-        alt: "Punjab Pagri House Cart",
-        caption: "Shopping cart UI"
-      }
+      
     ]
   },
   {
@@ -66,7 +57,7 @@ export const projects = [
       {
         src:"screenshots/apricus1.png",
         alt: "Apricus Academy Dashboard",
-        caption: "Homepage"
+        // caption: "Homepage"
       }
     ]
   },
@@ -96,13 +87,9 @@ export const projects = [
       {
         src:"screenshots/f1.png",
         alt: "ClearLedger Finance Dashboard",
-        caption: "Dashboard with key financial insights",
+        // caption: "Dashboard with key financial insights",
       },
-      {
-        src:"screenshots/f2.png",
-        alt: "ClearLedger Finance Spending Trends",
-        caption: "Spending trends with clear hierarchy",
-      }
+      
     ]
   },
   {
@@ -131,18 +118,9 @@ export const projects = [
       {
         src:"screenshots/excellence1.png",
         alt: "Excellence University Course Catalog",
-        caption: "Course catalog with simplified cards"
+        // caption: "Course catalog with simplified cards"
       },
-      {
-        src:"screenshots/excellence2.png",
-        alt: "Excellence University Course Section",
-        caption: "Student course section"
-      },
-      {
-        src:"screenshots/excellence3.png",
-        alt: "Excellence University Enrollment Flow",
-        caption: "Enrollment flow with clear next steps"
-      }
+      
     ]
   },
   {
@@ -171,13 +149,9 @@ export const projects = [
       {
         src:"screenshots/eco1.png",
         alt: "Eco Care Habit Tracking",
-        caption: "Habit tracking interface"
+        // caption: "Habit tracking interface"
       },
-      {
-        src:"screenshots/eco2.png",
-        alt: "Eco Care Scan",
-        caption: "Scan feature for product impact"
-      }
+      
     ]
   },
   {
