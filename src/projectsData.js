@@ -18,9 +18,9 @@ export const projects = [
       "Product catalog with shopping experience",
       "Increased online visibility for traditional crafts",
     ],
-    role: "UX · UI · Web Design · Figma · Complete project ownership from discovery to launch",
+    role: "Product Design Lead · Idea-to-product strategy · AI-directed execution · End-to-end delivery",
     tools: ["Figma", "Responsive UI", "E-commerce IA", "Prototyping"],
-    link: "",
+    link: "https://punjabpagrihouse.com/",
     images:[
       {
         src:"screenshots/punjabpagri1.png",
@@ -50,7 +50,7 @@ export const projects = [
       "Responsive design for desktop & mobile learning",
       "Clean visual hierarchy for better content focus",
     ],
-    role: "UX · UI · Frontend Design · Figma · Complete design ownership",
+    role: "Product Design Lead · Idea-to-product strategy · AI-directed execution · End-to-end delivery",
     tools: ["Figma", "Journey Mapping", "Dashboard Design", "Prototyping"],
     link: "",
     images: [

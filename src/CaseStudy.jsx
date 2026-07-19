@@ -1,65 +1,19 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { projects } from "./projectsData";
-import "./style.css";
+import { Shell, ProjectVisual, featuredIds } from "./components";
 
-const CaseStudyNav = ({ onBack }) => (
-  <header className="nav nav--case-study">
-    <div className="nav__logo" onClick={onBack} style={{ cursor: "pointer" }}>
-      ← MS • Portfolio
-    </div>
-    <nav className="nav__links">
-      <button onClick={onBack}>Back to Portfolio</button>
-    </nav>
-  </header>
-);
-
-const CaseStudiesPage = () => {
-  const navigate = useNavigate();
-
-  return (
-    <div className="page">
-      <div className="page__gradient" />
-      <CaseStudyNav onBack={() => navigate("/")} />
-      <main className="case-studies">
-        <section className="case-studies__header">
-          <p className="case-studies__subtitle">Deep Dives</p>
-          <h1>Case Studies</h1>
-          <p className="case-studies__desc">
-            Detailed exploration of design challenges, solutions, and outcomes from real projects.
-            Each case study shows the complete journey from research to shipped product.
-          </p>
-        </section>
-
-        <div className="case-studies__grid">
-          {projects.map((project, i) => (
-            <article 
-              key={i} 
-              className="case-study-card" 
-              onClick={() => navigate(`/case-studies/${project.id}`)}
-            >
-              <div className="case-study-card__badge">{project.tag}</div>
-              <h3>{project.title}</h3>
-              <p className="case-study-card__summary">{project.summary}</p>
-              
-              <div className="case-study-card__metrics">
-                <strong>Key Highlights:</strong>
-                <ul>
-                  {project.metrics.slice(0, 3).map((m, j) => (
-                    <li key={j}>{m}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <button className="case-study-card__read-more">
-                Read Full Case Study →
-              </button>
-            </article>
-          ))}
+export default function CaseStudiesPage() {
+  const ordered = [...projects].sort((a, b) => featuredIds.indexOf(b.id) - featuredIds.indexOf(a.id));
+  return <Shell>
+    <section className="page-hero content narrow"><p className="eyebrow">Selected work</p><h1>Product stories about decisions—not galleries of final screens.</h1><p>Each study separates shipped evidence, design rationale, targets, and unknowns so the work can be evaluated honestly.</p></section>
+    <section className="content section case-index">
+      {ordered.map((project, index) => <article key={project.id}>
+        <ProjectVisual project={project} eager={index === 0} />
+        <div><p className="eyebrow">{project.tag}</p><h2>{project.title}</h2><p>{project.challenge}</p>
+          <div className="label-row"><span>{project.id === "punjab-pagri-house" ? "Live product" : project.id === "apricus-academy" ? "Soon to be live" : "Concept"}</span><span>{featuredIds.includes(project.id) ? "Full study" : "Exploration"}</span></div>
+          <Link className="text-link" to={`/case-studies/${project.id}`}>Read case study <span aria-hidden="true">→</span></Link>
         </div>
-      </main>
-    </div>
-  );
-};
-
-export default CaseStudiesPage;
+      </article>)}
+    </section>
+  </Shell>;
+}
