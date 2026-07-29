@@ -18,7 +18,7 @@ export const projects = [
       "Product catalog with shopping experience",
       "Increased online visibility for traditional crafts",
     ],
-    role: "Product Design Lead · Idea-to-product strategy · AI-directed execution · End-to-end delivery",
+    role: "AI Product Builder & Product Designer · Idea-to-product strategy · End-to-end delivery",
     tools: ["Figma", "Responsive UI", "E-commerce IA", "Prototyping"],
     link: "https://punjabpagrihouse.com/",
     images:[
@@ -35,23 +35,24 @@ export const projects = [
     tag: "CASE STUDY · ED-TECH",
     title: "Apricus Academy",
     summary:
-      "Designed a comprehensive online learning platform that empowers students to discover courses, organize their learning journey, and track their educational progress. Created an intuitive, student-first experience that makes online education engaging and accessible.",
+      "Designed and developed a premium ed-tech learning management system where students can securely access classes, assessments, and tests anytime and anywhere. Purpose-built for NCLEX preparation, the platform combines unique student licences with fast delivery of recorded classes through Google Drive integration, while remaining scalable for future programs.",
     challenge:
-      "Students needed a clearer way to browse courses, understand what to do next, and keep track of their academic progress without jumping between disconnected screens.",
+      "Apricus Academy needed one secure platform for managing online classes, recorded lessons, assessments, and tests for NCLEX students—accessible anytime and anywhere, with a unique licence for every learner and the flexibility to support additional programs as the academy grows.",
     approach:
-      "Built a student-centered dashboard with guided enrollment flows, compact course cards, and progress cues that reduce decision fatigue while keeping momentum visible.",
+      "Built a responsive, NCLEX-focused LMS with a premium student dashboard, centralized learning and assessment management, unique licence-based access, and secure Google Drive integration for fast, reliable delivery of recorded classes.",
     outcome:
-      "A calmer learning platform that helps students stay organized, complete enrollment faster, and feel in control of their academic path.",
+      "A secure, scalable learning ecosystem that brings classes, recordings, assessments, and tests into one polished experience while giving the academy precise control over student access and content delivery.",
     metrics: [
-      "Complete frontend design system in Figma",
-      "Student-centered course discovery & enrollment",
-      "Intuitive dashboard for learning organization",
-      "Interactive progress tracking & achievements",
-      "Responsive design for desktop & mobile learning",
-      "Clean visual hierarchy for better content focus",
+      "Premium LMS experience designed for NCLEX preparation",
+      "Anytime, anywhere access to assigned classes",
+      "Unique licence for each student",
+      "Classes, assessments, and tests in one platform",
+      "Secure Google Drive integration for recorded classes",
+      "Scalable foundation for additional learning programs",
+      "Responsive experience across desktop and mobile"
     ],
-    role: "Product Design Lead · Idea-to-product strategy · AI-directed execution · End-to-end delivery",
-    tools: ["Figma", "Journey Mapping", "Dashboard Design", "Prototyping"],
+    role: "AI Product Builder & Product Designer · Idea-to-product strategy · End-to-end delivery",
+    tools: ["Figma", "LMS Architecture", "Google Drive Integration", "Responsive Development"],
     link: "",
     images: [
       {
