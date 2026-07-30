@@ -3,7 +3,13 @@ import { projects } from "./projectsData";
 import { Shell, ProjectVisual, featuredIds } from "./components";
 
 export default function CaseStudiesPage() {
-  const ordered = [...projects].sort((a, b) => featuredIds.indexOf(b.id) - featuredIds.indexOf(a.id));
+  const featured = featuredIds
+    .map((id) => projects.find((project) => project.id === id))
+    .filter(Boolean);
+  const ordered = [
+    ...featured,
+    ...projects.filter((project) => !featuredIds.includes(project.id)),
+  ];
   return <Shell>
     <section className="page-hero content narrow"><p className="eyebrow">Selected work</p><h1>Product stories about decisions—not galleries of final screens.</h1><p>Each study separates shipped evidence, design rationale, targets, and unknowns so the work can be evaluated honestly.</p></section>
     <section className="content section case-index">
